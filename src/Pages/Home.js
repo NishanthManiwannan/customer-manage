@@ -30,6 +30,8 @@ function Home() {
 
     return (
         <div>
+            <h1>All Customers details</h1>
+
             <table>
                 <thead>
                     <tr>
@@ -45,16 +47,20 @@ function Home() {
                             <tbody>{user.name}</tbody>
                             <tbody>{user.age}</tbody>
                             <tbody>
+
+                                <button onClick={() => {
+                                    //update(user.id)
+                                }}>update</button>
+
                                 <button onClick={() => {
                                     deleteuser(user.id)
                                 }}>Delete</button>
-                            </tbody>
 
-                            {/* <tbody>
-                                <button onClick={() => {
-                                    update(user.id, user.age)
-                                }}>update</button>
-                            </tbody> */}
+                                <Link to={`/view/${user.id}`}>
+                                    <button>View</button>
+                                </Link>
+
+                            </tbody>
                         </>)
 
                     })

@@ -34,6 +34,7 @@ function Add() {
             gender : Number(gender)
         })
 
+        setDetails(states)
     }
 
     return (
