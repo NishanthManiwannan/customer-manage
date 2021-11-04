@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { db } from '../firebase'
 import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore'
-import { async } from '@firebase/util'
+
+import "../Pages/Home.css"
 
 function Home() {
     const [datas, setData] = useState([])
@@ -26,42 +27,48 @@ function Home() {
     const deleteuser = async (id) => {
         const userDoc = doc(db, "customerInfo", id);
         await deleteDoc(userDoc);
+        window.location.reload()
     }
 
     return (
         <div>
             <h1>All Customers details</h1>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th> customer Name</th>
-                        <th> customer age</th>
-                    </tr>
-                </thead>
+            <table className="container">
+                <tr className="table-header">
+                    <th > Customer Name</th>
+                    <th > Customer age</th>
+                    <th > E mail</th>
+                    <th > Contact No</th>
+                    <th > </th>
+
+                </tr>
 
                 {
                     datas.map((user) => {
 
-                        return (<>
-                            <tbody>{user.name}</tbody>
-                            <tbody>{user.age}</tbody>
-                            <tbody>
+                        return (<tr>
+                            <td>{user.name}</td>
+                            <td>{user.age}</td>
+                            <td>{user.email}</td>
+                            <td>{user.contact}</td>
+
+                            <td>
 
                                 <button onClick={() => {
                                     //update(user.id)
-                                }}>update</button>
+                                }}><i class="far fa-edit"></i></button>
 
                                 <button onClick={() => {
                                     deleteuser(user.id)
-                                }}>Delete</button>
+                                }}><i class="fas fa-trash-alt"></i></button>
 
                                 <Link to={`/view/${user.id}`}>
-                                    <button>View</button>
+                                    <button><i class="fas fa-file"></i></button>
                                 </Link>
 
-                            </tbody>
-                        </>)
+                            </td>
+                        </tr>)
 
                     })
                 }

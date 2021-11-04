@@ -1,0 +1,32 @@
+.form-container{
+    margin-top: 20px;
+    background-color: #fff;
+    width: 80%;
+    margin: 0 15rem;
+    box-shadow: 0 6px 20px rgba(150, 158, 172, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(140, 140, 140, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(122, 122, 122, 0.017));
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.form-fields{
+    text-align: center;
+    display: flex;
+    padding: 10px 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.form-fields label{
+    font-size: 20px;
+    align-items: left;
+}
+
+.form-fields input{
+    font-size: 15px;
+    height: 30px;
+    align-items: left;
+    margin-left: 20px;
+    width: 30%;
+}

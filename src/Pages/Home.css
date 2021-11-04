@@ -1,0 +1,32 @@
+.container {
+    background-color: #fff;
+    width: 95%;
+    margin: 0 2rem;
+    box-shadow: 0 6px 20px rgba(150, 158, 172, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(140, 140, 140, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(122, 122, 122, 0.017));
+    padding: 10px;
+}
+
+.container td, .container th {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .container tr:nth-child(even){background-color: #ffffff;}
+  
+  .container tr:hover {background-color: rgb(230, 230, 230);}
+  
+  .container th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(31, 106, 211);
+    color: rgb(255, 255, 255);
+  }
+
+  button{
+      background-color: transparent;
+      border: transparent;
+      width: 30%;
+  }
